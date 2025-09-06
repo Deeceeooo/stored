@@ -2,8 +2,8 @@
 $connect = new PDO("mysql:host=localhost;dbname=countries", "root", "");
 
 // Call the stored procedure instead of direct query
-$query = "CALL GetCountryByCode('jp')";
-// $query = "SELECT * FROM african_countries";
+$query = "CALL GetCountries()";
+// $query = "SELECT * FROM apps_countries";
 
 
 $result = $connect->query($query);
@@ -18,8 +18,8 @@ $result = $connect->query($query);
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Bootstrap CSS -->
-        <link href="library/bootstrap-5/bootstrap.min.css" rel="stylesheet" />
-        <script src="library/bootstrap-5/bootstrap.bundle.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="library/dselect.js"></script>
 
         <title>StoredProcedure</title>

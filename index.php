@@ -1,10 +1,13 @@
 <?php 
-$connect = new PDO("mysql:host=localhost;dbname=countries", "root", "");
 
-// Call the stored procedure instead of direct query
-$query = "CALL GetCountries()";
-// $query = "SELECT * FROM apps_countries";
+//index.php
 
+$connect = new PDO("mysql:host=localhost;dbname=testing", "root", "");
+
+$query = "
+    SELECT country_name FROM apps_countries 
+    ORDER BY country_name ASC
+";
 
 $result = $connect->query($query);
 
@@ -22,12 +25,12 @@ $result = $connect->query($query);
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="library/dselect.js"></script>
 
-        <title>StoredProcedure</title>
+        <title>Bootstrap 5 Select Dropdown with Search Box using JavaScript with PHP</title>
     </head>
     <body>
 
         <div class="container">
-            <h1 class="mt-2 mb-3 text-center text-primary">Countries</h1>
+            <h1 class="mt-2 mb-3 text-center text-primary">Bootstrap 5 Select Dropdown with Search Box using JavaScript with PHP</h1>
             <div class="row">
                 <div class="col-md-3">&nbsp;</div>
                 <div class="col-md-6">

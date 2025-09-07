@@ -6,7 +6,7 @@ $result = [];
 
 // If user entered a country code
 if (!empty($_POST['country_code'])) {
-    $code = strtoupper(trim($_POST['country_code']));
+    $code = strtoupper($_POST['country_code']);
 
     // Call stored procedure with parameter
     $stmt = $connect->prepare("CALL GetCountryByCode(:p_country_code)");
@@ -29,12 +29,12 @@ if (!empty($_POST['country_code'])) {
 <div class="container">
     <h1 class="mt-2 mb-3 text-center text-primary">Countries</h1>
 
-    <!-- Country dropdown -->
+<!-- Country dropdown -->
     <div class="row mb-3">
         <div class="col-md-3">&nbsp;</div>
         <div class="col-md-6">
             <select name="select_box" class="form-select">
-                <option value="">Select Country</option>
+                <option value="">Country</option>
                 <?php 
                 if (!empty($result)) {
                     foreach ($result as $row) {
@@ -47,7 +47,7 @@ if (!empty($_POST['country_code'])) {
         <div class="col-md-3">&nbsp;</div>
     </div>
 
-    <!-- Search bar for country code -->
+<!-- Search bar for country code -->
     <form method="POST" id="codeForm" class="row">
         <div class="col-md-4 offset-md-3">
             <input type="text" name="country_code" id="country_code" class="form-control" 
